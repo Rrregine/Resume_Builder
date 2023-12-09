@@ -24,5 +24,15 @@ namespace Final_Project
         {
             InitializeComponent();
         }
+
+        private void AddResumeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
