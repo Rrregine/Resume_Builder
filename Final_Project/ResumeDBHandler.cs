@@ -27,7 +27,7 @@ namespace Final_Project
                 LastName = "Solo",
                 Gender = "Male",
                 Age = 40,
-                ContactInfo = { "hansolo@gmail.com" }
+                ContactInfo = "hansolo@gmail.com" 
             };
 
             Resume newR2 = new Resume
@@ -36,7 +36,7 @@ namespace Final_Project
                 LastName = "Forst",
                 Gender = "Male",
                 Age = 18,
-                ContactInfo = {"111-1111-1111"}
+                ContactInfo = "111-1111-1111"
             };
 
             Resume newR3 = new Resume
@@ -45,7 +45,7 @@ namespace Final_Project
                 LastName = "Forst",
                 Gender = "Male",
                 Age = 24,
-                ContactInfo = {"ellanforst@gmail.com","222-2222-2222"}
+                ContactInfo = "ellanforst@gmail.com"
             };
 
             Resume newR4 = new Resume
@@ -54,7 +54,7 @@ namespace Final_Project
                 LastName = "Silversmith",
                 Gender = "Male",
                 Age = 25,
-                ContactInfo = {"333-3333-3333"}
+                ContactInfo = "333-3333-3333"
             };
 
             AddResume(newR1);
@@ -118,7 +118,7 @@ namespace Final_Project
                 SQLiteCommand command1 = new SQLiteCommand(drop, con);
                 command1.ExecuteNonQuery();
 
-                string table = "create table RESUMES (ID integer primary key, FirstName text, LastName text, Gender text, Age integer, ContactInfo ARRAY<TEXT>, Experience ARRAY<TEXT>, Education ARRAY<TEXT>, Hobbies ARRAY<TEXT>, References ARRAY<TEXT>);";
+                string table = "create table RESUMES (ID integer primary key, FirstName text, LastName text, Gender text, Age integer, ContactInfo text, Experience text, Education text, Hobbies text, 'References' text);";
 
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
                 command2.ExecuteNonQuery();
@@ -155,20 +155,20 @@ namespace Final_Project
                             resume.Age = age;
                         }
 
-                        string contactInfoString = reader["ContactInfo"].ToString();
-                        resume.ContactInfo = contactInfoString.Split(',').ToList();
+                        
+                        resume.ContactInfo = reader["ContactInfo"].ToString();
 
-                        string experienceString = reader["Experience"].ToString();
-                        resume.Experience = experienceString.Split(',').ToList();
+                       
+                        resume.Experience = reader["Experience"].ToString();
 
-                        string educationString = reader["Education"].ToString();
-                        resume.Education = educationString.Split(',').ToList();
+                         
+                        resume.Education = reader["Education"].ToString();
 
-                        string hobbiesString = reader["Hobbies"].ToString();
-                        resume.Hobbies = hobbiesString.Split(',').ToList();
+                        
+                        resume.Hobbies = reader["Hobbies"].ToString();
 
-                        string referencesString = reader["References"].ToString();
-                        resume.References = referencesString.Split(',').ToList();
+                        
+                        resume.References = reader["References"].ToString();
                     }
                 }
                 return resume;
@@ -264,20 +264,19 @@ namespace Final_Project
                         }
 
 
-                        string contactInfoString = reader["ContactInfo"].ToString();
-                        resume.ContactInfo = contactInfoString.Split(',').ToList();
+                        resume.ContactInfo = reader["ContactInfo"].ToString();
 
-                        string experienceString = reader["Experience"].ToString();
-                        resume.Experience = experienceString.Split(',').ToList();
 
-                        string educationString = reader["Education"].ToString();
-                        resume.Education = educationString.Split(',').ToList();
+                        resume.Experience = reader["Experience"].ToString();
 
-                        string hobbiesString = reader["Hobbies"].ToString();
-                        resume.Hobbies = hobbiesString.Split(',').ToList();
 
-                        string referencesString = reader["References"].ToString();
-                        resume.References = referencesString.Split(',').ToList();
+                        resume.Education = reader["Education"].ToString();
+
+
+                        resume.Hobbies = reader["Hobbies"].ToString();
+
+
+                        resume.References = reader["References"].ToString();
 
                         listResumes.Add(resume);
 

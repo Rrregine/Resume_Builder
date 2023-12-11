@@ -34,7 +34,7 @@
             </Button>
         </StackPanel>
 
-            <DataGrid x:Name="AllPeopleDataGrid"
-              SelectionChanged="AllPeopleDataGrid_SelectionChanged"/>
+            <DataGrid x:Name="AllResumesDataGrid"
+              SelectionChanged="AllResumesDataGrid_SelectionChanged"/>
     </DockPanel>
 </Window>

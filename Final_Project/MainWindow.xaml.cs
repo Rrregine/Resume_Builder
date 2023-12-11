@@ -20,9 +20,21 @@ namespace Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        ResumeDBHandler db = ResumeDBHandler.Instance;
+        List<Resume> resumes;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            RefreshAllResumesList();
+        }
+
+        private void RefreshAllResumesList()
+        {
+            AllResumesDataGrid.ItemsSource = null;
+            resumes = db.ReadAllResumes();
+            AllResumesDataGrid.ItemsSource = resumes;
         }
 
         private void AddResumeButton_Click(object sender, RoutedEventArgs e)
@@ -35,6 +47,18 @@ namespace Final_Project
         private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void AllResumesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Resume resume = (Resume)AllResumesDataGrid.SelectedItem;
+
+            if (resume != null)
+            {
+                ResumeDetailsWindow resumeDetailsWindow = new ResumeDetailsWindow(resume);
+                resumeDetailsWindow.ShowDialog();
+                RefreshAllResumesList();
+            }
         }
     }
 }
