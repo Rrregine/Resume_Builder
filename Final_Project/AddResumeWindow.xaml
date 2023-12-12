@@ -34,6 +34,10 @@
 				<TextBox x:Name="experienceTextBox"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
+				<Label Content="Education: "/>
+				<TextBox x:Name="educationTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
 				<Label Content="Hobbies: "/>
 				<TextBox x:Name="hobbiesTextBox"/>
 			</StackPanel>
@@ -41,7 +45,7 @@
 				<Label Content="References: "/>
 				<TextBox x:Name="referencesTextBox"/>
 			</StackPanel>
-				<Button x:Name="SubemitButton" Click="SubmitButtonClick">
+				<Button x:Name="SubmitButton" Click="SubmitButtonClick">
 						Submit
 				</Button>
 			</StackPanel>

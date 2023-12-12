@@ -23,5 +23,26 @@ namespace Final_Project
         {
             InitializeComponent();
         }
+
+       
+        private void SubmitButtonClick(object sender, RoutedEventArgs e)
+        {
+            Resume newResume = new Resume();
+            newResume.FirstName = firstNameTextBox.Text;
+            newResume.LastName = lastNameTextBox.Text;
+            newResume.Gender = genderTextBox.Text;
+            newResume.Age = ageTextBox.Text;
+            newResume.ContactInfo = contactTextBox.Text;
+            newResume.Experience = experienceTextBox.Text;
+            newResume.Education = educationTextBox.Text;
+            newResume.Hobbies = hobbiesTextBox.Text;
+            newResume.References = referencesTextBox.Text;
+
+
+
+            ResumeDBHandler db = ResumeDBHandler.Instance;
+            db.AddResume(newResume);
+            Close();
+        }
     }
 }
