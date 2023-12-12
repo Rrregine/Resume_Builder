@@ -25,15 +25,15 @@ namespace Final_Project
             InitializeComponent();
             this.resume = resume;
 
-            resume.FirstName = firstNameTextBlock.Text;
-            resume.LastName = lastNameTextBlock.Text;
-            resume.Gender = genderTextBlock.Text;
-            resume.Age = Convert.ToInt32(ageTextBlock.Text);
-            resume.ContactInfo = contactTextBlock.Text;
-            resume.Experience = experienceTextBlock.Text;
-            resume.Education = educationTextBlock.Text;
-            resume.Hobbies = hobbiesTextBlock.Text;
-            resume.Ref = referencesTextBlock.Text;
+            firstNameTextBlock.Text = resume.FirstName ;
+            lastNameTextBlock.Text = resume.LastName;
+            genderTextBlock.Text = resume.Gender;
+            ageTextBlock.Text = resume.Age.ToString();
+            contactTextBlock.Text = resume.ContactInfo;
+            experienceTextBlock.Text = resume.Experience;
+            educationTextBlock.Text = resume.Education;
+            hobbiesTextBlock.Text = resume.Hobbies;
+            referencesTextBlock.Text = resume.Ref;
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)

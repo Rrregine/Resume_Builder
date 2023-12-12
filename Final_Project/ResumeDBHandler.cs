@@ -23,8 +23,8 @@ namespace Final_Project
             //seed the table
             Resume newR1 = new Resume
             {
-                FirstName = "Han",
-                LastName = "Solo",
+                FirstName = "Regine",
+                LastName = "Wang",
                 Gender = "Male",
                 Age = 40,
                 ContactInfo = "hansolo@gmail.com",
