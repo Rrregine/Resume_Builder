@@ -45,6 +45,14 @@
 				<Label Content="References: "/>
 				<TextBox x:Name="referencesTextBox"/>
 			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Created on:: "/>
+				<TextBlock x:Name="createdOnTextBlock"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Last Modified On:: "/>
+				<TextBlock x:Name="lastModifiedTextBlock"/>
+			</StackPanel>
 			<Button x:Name="SaveButton" Click="SaveButtonClick">
 				Submit
 			</Button>
