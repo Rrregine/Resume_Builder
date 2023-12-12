@@ -41,7 +41,7 @@
 				<Label Content="References: "/>
 				<TextBox x:Name="referencesTextBox"/>
 			</StackPanel>
-			<Button x:Name="SubemitButton" Click="SubmitButtonClick">
+			<Button x:Name="SaveButton" Click="SaveButtonClick">
 				Submit
 			</Button>
 		</StackPanel>

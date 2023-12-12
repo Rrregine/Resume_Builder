@@ -19,9 +19,40 @@ namespace Final_Project
     /// </summary>
     public partial class UpdateResumeWindow : Window
     {
+        Resume resume;
+
         public UpdateResumeWindow()
         {
             InitializeComponent();
+            this.resume = resume;
+
+            resume.FirstName = firstNameTextBox.Text;
+            resume.LastName = lastNameTextBox.Text;
+            resume.Gender = genderTextBox.Text;
+            resume.Age = Convert.toInt32(ageTextBox.Text);
+            resume.ContactInfo = contactTextBox.Text;
+            resume.Experience = experienceTextBox.Text;
+            resume.Education = educationTextBox.Text;
+            resume.Hobbies = hobbiesTextBox.Text;
+            resume.References = referencesTextBox.Text;
+        }
+        
+             private void SaveButtonClick(object sender, RoutedEventArgs e)
+        {
+            resume.FirstName = firstNameTextBox.Text;
+            resume.LastName = lastNameTextBox.Text;
+            resume.Gender = genderTextBox.Text;
+            resume.Age = Convert.toInt32(ageTextBox.Text);
+            resume.ContactInfo = contactTextBox.Text;
+            resume.Experience = experienceTextBox.Text;
+            resume.Education = educationTextBox.Text;
+            resume.Hobbies = hobbiesTextBox.Text;
+            resume.References = referencesTextBox.Text;
+
+            ResumeDBHandler db = ResumeDBHandler.Instance;
+            db.UpdateResume(resume);
+            Close();
+
         }
     }
 }
