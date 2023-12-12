@@ -24,6 +24,16 @@ namespace Final_Project
         {
             InitializeComponent();
             this.resume = resume;
+
+            resume.FirstName = firstNameTextBlock.Text;
+            resume.LastName = lastNameTextBlock.Text;
+            resume.Gender = genderTextBlock.Text;
+            resume.Age = Convert.ToInt32(ageTextBlock.Text);
+            resume.ContactInfo = contactTextBlock.Text;
+            resume.Experience = experienceTextBlock.Text;
+            resume.Education = educationTextBlock.Text;
+            resume.Hobbies = hobbiesTextBlock.Text;
+            resume.Ref = referencesTextBlock.Text;
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
