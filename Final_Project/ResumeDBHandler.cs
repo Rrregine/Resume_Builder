@@ -27,7 +27,7 @@ namespace Final_Project
                 LastName = "Solo",
                 Gender = "Male",
                 Age = 40,
-                ContactInfo = { "hansolo@gmail.com" }
+                ContactInfo = "hansolo@gmail.com" 
             };
 
             Resume newR2 = new Resume
@@ -36,7 +36,7 @@ namespace Final_Project
                 LastName = "Forst",
                 Gender = "Male",
                 Age = 18,
-                ContactInfo = {"111-1111-1111"}
+                ContactInfo = "111-1111-1111"
             };
 
             Resume newR3 = new Resume
@@ -45,27 +45,28 @@ namespace Final_Project
                 LastName = "Forst",
                 Gender = "Male",
                 Age = 24,
-                ContactInfo = {"ellanforst@gmail.com","222-2222-2222"}
+                ContactInfo = "ellanforst@gmail.com"
             };
 
-            Person newP4 = new Person
+            Resume newR4 = new Resume
             {
                 FirstName = "Nordt",
                 LastName = "Silversmith",
-                City = "Flora",
-                Age = 25
+                Gender = "Male",
+                Age = 25,
+                ContactInfo = "333-3333-3333"
             };
 
-            AddPerson(newP1);
-            AddPerson(newP2);
-            AddPerson(newP3);
-            AddPerson(newP4);
+            AddResume(newR1);
+            AddResume(newR2);
+            AddResume(newR3);
+            AddResume(newR4);
 
         }
 
-        public static PersonDBHandler Instance { get { return instance; } }
+        public static ResumeDBHandler Instance { get { return instance; } }
 
-        public int AddPerson(Person person)
+        public int AddResume(Resume resume)
         {
             int newId = 0;
             int rows = 0;
@@ -74,15 +75,20 @@ namespace Final_Project
                 con.Open();
 
                 //Create parameterized query
-                string query = "INSERT INTO PERSONS (FirstName, LastName, City, Age) VALUES (@FirstName, @LastName, @City, @Age);";
+                string query = "INSERT INTO RESUMES (FirstName, LastName, Gender, Age, ContactInfo, Experience, Education, Hobbies, References) VALUES (@FirstName, @LastName, @City, @Age, @ContactInfo, @Experience, @Education, @Hobbies, @References);";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
 
                 //Pass values to query parameter
-                insertcom.Parameters.AddWithValue("@FirstName", person.FirstName);
-                insertcom.Parameters.AddWithValue("@LastName", person.LastName);
-                insertcom.Parameters.AddWithValue("@City", person.City);
-                insertcom.Parameters.AddWithValue("@Age", person.Age);
+                insertcom.Parameters.AddWithValue("@FirstName", resume.FirstName);
+                insertcom.Parameters.AddWithValue("@LastName", resume.LastName);
+                insertcom.Parameters.AddWithValue("@Gender", resume.Gender);
+                insertcom.Parameters.AddWithValue("@Age", resume.Age);
+                insertcom.Parameters.AddWithValue("@ContactInfo", resume.ContactInfo);
+                insertcom.Parameters.AddWithValue("@Experience", resume.Experience);
+                insertcom.Parameters.AddWithValue("@Education", resume.Education);
+                insertcom.Parameters.AddWithValue("@Hobbies", resume.Hobbies);
+                insertcom.Parameters.AddWithValue("@References", resume.References);
 
                 try
                 {
@@ -108,26 +114,26 @@ namespace Final_Project
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
-                string drop = "drop table if exists PERSONS";
+                string drop = "drop table if exists RESUMES";
                 SQLiteCommand command1 = new SQLiteCommand(drop, con);
                 command1.ExecuteNonQuery();
 
-                string table = "create table PERSONS (ID integer primary key, FirstName text, LastName text, City text, Age integer);";
+                string table = "create table RESUMES (ID integer primary key, FirstName text, LastName text, Gender text, Age integer, ContactInfo text, Experience text, Education text, Hobbies text, 'References' text);";
 
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
                 command2.ExecuteNonQuery();
             }
         }
 
-        public Person GetPerson(int id)
+        public Resume GetResume(int id)
         {
-            Person person = new Person();
+            Resume resume = new Resume();
 
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
 
-                SQLiteCommand getcom = new SQLiteCommand("Select * from Persons WHERE Id = @Id",
+                SQLiteCommand getcom = new SQLiteCommand("Select * from Resumes WHERE Id = @Id",
                     con);
 
                 getcom.Parameters.AddWithValue("@Id", id);
@@ -138,24 +144,39 @@ namespace Final_Project
                     {
                         if (Int32.TryParse(reader["Id"].ToString(), out int id2))
                         {
-                            person.Id = id2;
+                            resume.Id = id2;
                         }
-                        person.FirstName = reader["FirstName"].ToString();
-                        person.LastName = reader["LastName"].ToString();
-                        person.City = reader["City"].ToString();
+                        resume.FirstName = reader["FirstName"].ToString();
+                        resume.LastName = reader["LastName"].ToString();
+                        resume.Gender = reader["Gender"].ToString();
 
                         if (Int32.TryParse(reader["Age"].ToString(), out int age))
                         {
-                            person.Age = age;
+                            resume.Age = age;
                         }
+
+                        
+                        resume.ContactInfo = reader["ContactInfo"].ToString();
+
+                       
+                        resume.Experience = reader["Experience"].ToString();
+
+                         
+                        resume.Education = reader["Education"].ToString();
+
+                        
+                        resume.Hobbies = reader["Hobbies"].ToString();
+
+                        
+                        resume.References = reader["References"].ToString();
                     }
                 }
-                return person;
+                return resume;
             }
 
         }
 
-        public int UpdatePerson(Person person)
+        public int UpdateResume(Resume resume)
         {
             int row = 0;
 
@@ -163,14 +184,19 @@ namespace Final_Project
             {
                 con.Open();
 
-                string query = "UPDATE Persons SET FirstName = @FirstName, LastName = @LastName, City = @City, Age = @Age WHERE Id = @Id";
+                string query = "UPDATE Resumes SET FirstName = @FirstName, LastName = @LastName, Gender = @Gender, Age = @Age, ContactInfo = @ContactInfo, Experience = @Experience, Education = @Education, Hobbies = @Hobbies, References = @References WHERE Id = @Id";
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
-                updatecom.Parameters.AddWithValue("@Id", person.Id);
-                updatecom.Parameters.AddWithValue("@FirstName", person.FirstName);
-                updatecom.Parameters.AddWithValue("@LastName", person.LastName);
-                updatecom.Parameters.AddWithValue("@City", person.City);
-                updatecom.Parameters.AddWithValue("@Age", person.Age);
+                updatecom.Parameters.AddWithValue("@Id", resume.Id);
+                updatecom.Parameters.AddWithValue("@FirstName", resume.FirstName);
+                updatecom.Parameters.AddWithValue("@LastName", resume.LastName);
+                updatecom.Parameters.AddWithValue("@Gender", resume.Gender);
+                updatecom.Parameters.AddWithValue("@Age", resume.Age);
+                updatecom.Parameters.AddWithValue("@ContactInfo", resume.ContactInfo);
+                updatecom.Parameters.AddWithValue("@Experience", resume.Experience);
+                updatecom.Parameters.AddWithValue("@Education", resume.Education);
+                updatecom.Parameters.AddWithValue("@Hobbies", resume.Hobbies);
+                updatecom.Parameters.AddWithValue("@References", resume.References);
 
                 try
                 {
@@ -184,16 +210,16 @@ namespace Final_Project
             return row;
         }
 
-        public int DeletePerson(Person person)
+        public int DeleteResume(Resume resume)
         {
             int row = 0;
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
 
-                string query = "DELETE FROM Persons WHERE id=@Id";
+                string query = "DELETE FROM Resumes WHERE id=@Id";
                 SQLiteCommand deletecom = new SQLiteCommand(query, con);
-                deletecom.Parameters.AddWithValue("@Id", person.Id);
+                deletecom.Parameters.AddWithValue("@Id", resume.Id);
 
                 try
                 {
@@ -210,39 +236,55 @@ namespace Final_Project
 
         }
 
-        public List<Person> ReadAllPersons()
+        public List<Resume> ReadAllResumes()
         {
-            List<Person> listPersons = new List<Person>();
+            List<Resume> listResumes = new List<Resume>();
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("Select * from Persons", con);
+                SQLiteCommand com = new SQLiteCommand("Select * from Resumes", con);
 
                 using (SQLiteDataReader reader = com.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        //Create Person object
-                        Person person = new Person();
+                        //Create Resume object
+                        Resume resume = new Resume();
 
                         if (Int32.TryParse(reader["Id"].ToString(), out int id))
                         {
-                            person.Id = id;
+                            resume.Id = id;
                         }
-                        person.FirstName = reader["FirstName"].ToString();
-                        person.LastName = reader["LastName"].ToString();
-                        person.City = reader["City"].ToString();
+                        resume.FirstName = reader["FirstName"].ToString();
+                        resume.LastName = reader["LastName"].ToString();
+                        resume.Gender = reader["Gender"].ToString();
                         if (Int32.TryParse(reader["Age"].ToString(), out int age))
                         {
-                            person.Age = age;
+                            resume.Age = age;
                         }
-                        listPersons.Add(person);
+
+
+                        resume.ContactInfo = reader["ContactInfo"].ToString();
+
+
+                        resume.Experience = reader["Experience"].ToString();
+
+
+                        resume.Education = reader["Education"].ToString();
+
+
+                        resume.Hobbies = reader["Hobbies"].ToString();
+
+
+                        resume.References = reader["References"].ToString();
+
+                        listResumes.Add(resume);
 
                     }
 
                 }
             }
-            return listPersons;
+            return listResumes;
         }
     }
 }

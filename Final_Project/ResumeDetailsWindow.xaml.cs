@@ -19,9 +19,11 @@ namespace Final_Project
     /// </summary>
     public partial class ResumeDetailsWindow : Window
     {
-        public ResumeDetailsWindow()
+        Resume resume;
+        public ResumeDetailsWindow(Resume resume)
         {
             InitializeComponent();
+            this.resume = resume;
         }
     }
 }

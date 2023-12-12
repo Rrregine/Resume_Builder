@@ -13,11 +13,11 @@ namespace Final_Project
         public string LastName { get; set; }
         public String Gender { get; set; }
         public int Age { get; set; }
-        public List<string> ContactInfo { get; set; } 
-        public List<string> Experience { get; set; } 
-        public List<string> Education { get; set; } 
-        public List<string> Hobbies { get; set; } 
-        public List<string> References { get; set; }
+        public string ContactInfo { get; set; } 
+        public string Experience { get; set; } 
+        public string Education { get; set; } 
+        public string Hobbies { get; set; } 
+        public string References { get; set; }
 
         public override string ToString()
         {
