@@ -19,12 +19,35 @@ namespace Final_Project
     /// </summary>
     public partial class AddResumeWindow : Window
     {
+        private DateTime createdOn;
+        private DateTime lastModified;
+
         public AddResumeWindow()
         {
             InitializeComponent();
+            InitializeDates();
         }
 
-       
+        private void InitializeDates()
+        {
+            createdOn = DateTime.Now;
+            lastModified = createdOn;
+            UpdateDateTextBlocks();
+        }
+
+        private void UpdateDateTextBlocks()
+        {
+            createdOnTextBlock.Text = createdOn.ToString("G");
+            lastModifiedTextBlock.Text = lastModified.ToString("G");
+        }
+
+        private void ModifyData_Click(object sender, RoutedEventArgs e)
+        {
+            // Simulate data modification
+            lastModified = DateTime.Now;
+            UpdateDateTextBlocks();
+        }
+
         private void SubmitButtonClick(object sender, RoutedEventArgs e)
         {
             Resume newResume = new Resume();

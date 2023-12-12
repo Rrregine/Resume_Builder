@@ -19,12 +19,15 @@ namespace Final_Project
     /// </summary>
     public partial class ResumeDetailsWindow : Window
     {
+        private DateTime createdOn;
+        private DateTime lastModified;
+
         Resume resume;
         public ResumeDetailsWindow(Resume resume)
         {
             InitializeComponent();
             this.resume = resume;
-
+            InitializeDates();
             firstNameTextBlock.Text = resume.FirstName ;
             lastNameTextBlock.Text = resume.LastName;
             genderTextBlock.Text = resume.Gender;
@@ -34,6 +37,26 @@ namespace Final_Project
             educationTextBlock.Text = resume.Education;
             hobbiesTextBlock.Text = resume.Hobbies;
             referencesTextBlock.Text = resume.Ref;
+        }
+
+        private void InitializeDates()
+        {
+            createdOn = DateTime.Now;
+            lastModified = createdOn;
+            UpdateDateTextBlocks();
+        }
+
+        private void UpdateDateTextBlocks()
+        {
+            createdOnTextBlock.Text = createdOn.ToString("G");
+            lastModifiedTextBlock.Text = lastModified.ToString("G");
+        }
+
+        private void ModifyData_Click(object sender, RoutedEventArgs e)
+        {
+            // Simulate data modification
+            lastModified = DateTime.Now;
+            UpdateDateTextBlocks();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
