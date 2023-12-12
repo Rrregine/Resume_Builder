@@ -35,7 +35,9 @@ namespace Final_Project
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ResumeDBHandler db = ResumeDBHandler.Instance;
+            db.DeleteResume(resume);
+            Close();
         }
     }
 }
