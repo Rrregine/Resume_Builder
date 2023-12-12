@@ -31,7 +31,7 @@ namespace Final_Project
             newResume.FirstName = firstNameTextBox.Text;
             newResume.LastName = lastNameTextBox.Text;
             newResume.Gender = genderTextBox.Text;
-            newResume.Age = ageTextBox.Text;
+            newResume.Age = Convert.ToInt32(ageTextBox.Text);
             newResume.ContactInfo = contactTextBox.Text;
             newResume.Experience = experienceTextBox.Text;
             newResume.Education = educationTextBox.Text;

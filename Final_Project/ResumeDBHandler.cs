@@ -27,7 +27,11 @@ namespace Final_Project
                 LastName = "Solo",
                 Gender = "Male",
                 Age = 40,
-                ContactInfo = "hansolo@gmail.com" 
+                ContactInfo = "hansolo@gmail.com",
+                Experience = "a",
+                Education = "a",
+                Hobbies = "a",
+                References = "a"
             };
 
             Resume newR2 = new Resume
@@ -36,7 +40,11 @@ namespace Final_Project
                 LastName = "Forst",
                 Gender = "Male",
                 Age = 18,
-                ContactInfo = "111-1111-1111"
+                ContactInfo = "111-1111-1111",
+                Experience = "a",
+                Education = "a",
+                Hobbies = "a",
+                References = "a"
             };
 
             Resume newR3 = new Resume
@@ -45,7 +53,11 @@ namespace Final_Project
                 LastName = "Forst",
                 Gender = "Male",
                 Age = 24,
-                ContactInfo = "ellanforst@gmail.com"
+                ContactInfo = "ellanforst@gmail.com",
+                Experience = "a",
+                Education = "a",
+                Hobbies = "a",
+                References = "a"
             };
 
             Resume newR4 = new Resume
@@ -54,7 +66,11 @@ namespace Final_Project
                 LastName = "Silversmith",
                 Gender = "Male",
                 Age = 25,
-                ContactInfo = "333-3333-3333"
+                ContactInfo = "333-3333-3333",
+                Experience = "a",
+                Education = "a",
+                Hobbies = "a",
+                References = "a"
             };
 
             AddResume(newR1);
@@ -75,7 +91,7 @@ namespace Final_Project
                 con.Open();
 
                 //Create parameterized query
-                string query = "INSERT INTO RESUMES (FirstName, LastName, Gender, Age, ContactInfo, Experience, Education, Hobbies, References) VALUES (@FirstName, @LastName, @City, @Age, @ContactInfo, @Experience, @Education, @Hobbies, @References);";
+                string query = "INSERT INTO RESUMES (FirstName, LastName, Gender, Age, ContactInfo, Experience, Education, Hobbies, References) VALUES (@FirstName, @LastName, @Gender, @Age, @ContactInfo, @Experience, @Education, @Hobbies, @References);";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
 

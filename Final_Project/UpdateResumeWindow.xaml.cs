@@ -21,7 +21,7 @@ namespace Final_Project
     {
         Resume resume;
 
-        public UpdateResumeWindow()
+        public UpdateResumeWindow(Resume resume)
         {
             InitializeComponent();
             this.resume = resume;
@@ -29,7 +29,7 @@ namespace Final_Project
             resume.FirstName = firstNameTextBox.Text;
             resume.LastName = lastNameTextBox.Text;
             resume.Gender = genderTextBox.Text;
-            resume.Age = Convert.toInt32(ageTextBox.Text);
+            resume.Age = Convert.ToInt32(ageTextBox.Text);
             resume.ContactInfo = contactTextBox.Text;
             resume.Experience = experienceTextBox.Text;
             resume.Education = educationTextBox.Text;
@@ -42,7 +42,7 @@ namespace Final_Project
             resume.FirstName = firstNameTextBox.Text;
             resume.LastName = lastNameTextBox.Text;
             resume.Gender = genderTextBox.Text;
-            resume.Age = Convert.toInt32(ageTextBox.Text);
+            resume.Age = Convert.ToInt32(ageTextBox.Text);
             resume.ContactInfo = contactTextBox.Text;
             resume.Experience = experienceTextBox.Text;
             resume.Education = educationTextBox.Text;

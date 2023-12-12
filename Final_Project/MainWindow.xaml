@@ -35,6 +35,6 @@
         </StackPanel>
 
             <DataGrid x:Name="AllResumesDataGrid"
-              SelectionChanged="AllResumesDataGrid_SelectionChanged"/>
+              SelectionChanged="AllResumesDataGrid_SelectionChanged" Height="295" Width="794"/>
     </DockPanel>
 </Window>

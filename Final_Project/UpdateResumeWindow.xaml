@@ -29,7 +29,11 @@
 				<Label Content="Contact Info: "/>
 				<TextBox x:Name="contactTextBox"/>
 			</StackPanel>
-			<StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Education: "/>
+                <TextBox x:Name="educationTextBox"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
 				<Label Content="Experience: "/>
 				<TextBox x:Name="experienceTextBox"/>
 			</StackPanel>
