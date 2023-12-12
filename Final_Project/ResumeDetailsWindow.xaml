@@ -46,11 +46,11 @@
                 <TextBlock x:Name="referencesTextBlock"/>
             </StackPanel>
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Created on:: "/>
+				<Label Content="Created on: "/>
 				<TextBlock x:Name="createdOnTextBlock"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Last Modified On:: "/>
+				<Label Content="Last Modified: "/>
 				<TextBlock x:Name="lastModifiedTextBlock"/>
 			</StackPanel>
 			<Button x:Name="Modify_Dat" Click="ModifyData_Click">
