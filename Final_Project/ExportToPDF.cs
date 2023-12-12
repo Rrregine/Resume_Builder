@@ -54,7 +54,7 @@ namespace Final_Project
             foreach (Resume resume in resumes)
             {
                 text += String.Format("{0}\t {1}\t {2} \t, {3}\t, {4} year-old\nContact Information: {5}\nWork Experience: {6}\nEducation: {7}\nHobbies: {8}\nReferences: {9}",
-                resume.Id, resume.FirstName, resume.LastName, resume.Gender, resume.Age, resume.ContactInfo, resume.Experience, resume.Education, resume.Hobbies, resume.References);
+                resume.Id, resume.FirstName, resume.LastName, resume.Gender, resume.Age, resume.ContactInfo, resume.Experience, resume.Education, resume.Hobbies, resume.Ref);
             }
             rect = new XRect(10, 220, page.Width - 20, 220);
             tf.Alignment = XParagraphAlignment.Left;

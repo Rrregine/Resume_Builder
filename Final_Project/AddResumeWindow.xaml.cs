@@ -36,7 +36,7 @@ namespace Final_Project
             newResume.Experience = experienceTextBox.Text;
             newResume.Education = educationTextBox.Text;
             newResume.Hobbies = hobbiesTextBox.Text;
-            newResume.References = referencesTextBox.Text;
+            newResume.Ref = referencesTextBox.Text;
 
 
 

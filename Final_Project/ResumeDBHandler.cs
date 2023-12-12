@@ -31,7 +31,7 @@ namespace Final_Project
                 Experience = "a",
                 Education = "a",
                 Hobbies = "a",
-                References = "a"
+                Ref = "a"
             };
 
             Resume newR2 = new Resume
@@ -44,7 +44,7 @@ namespace Final_Project
                 Experience = "a",
                 Education = "a",
                 Hobbies = "a",
-                References = "a"
+                Ref = "a"
             };
 
             Resume newR3 = new Resume
@@ -57,7 +57,7 @@ namespace Final_Project
                 Experience = "a",
                 Education = "a",
                 Hobbies = "a",
-                References = "a"
+                Ref = "a"
             };
 
             Resume newR4 = new Resume
@@ -70,7 +70,7 @@ namespace Final_Project
                 Experience = "a",
                 Education = "a",
                 Hobbies = "a",
-                References = "a"
+                Ref = "a"
             };
 
             AddResume(newR1);
@@ -91,7 +91,7 @@ namespace Final_Project
                 con.Open();
 
                 //Create parameterized query
-                string query = "INSERT INTO RESUMES (FirstName, LastName, Gender, Age, ContactInfo, Experience, Education, Hobbies, References) VALUES (@FirstName, @LastName, @Gender, @Age, @ContactInfo, @Experience, @Education, @Hobbies, @References);";
+                string query = "INSERT INTO RESUMES (FirstName, LastName, Gender, Age, ContactInfo, Experience, Education, Hobbies, Ref) VALUES (@FirstName, @LastName, @Gender, @Age, @ContactInfo, @Experience, @Education, @Hobbies, @Ref);";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
 
@@ -104,7 +104,7 @@ namespace Final_Project
                 insertcom.Parameters.AddWithValue("@Experience", resume.Experience);
                 insertcom.Parameters.AddWithValue("@Education", resume.Education);
                 insertcom.Parameters.AddWithValue("@Hobbies", resume.Hobbies);
-                insertcom.Parameters.AddWithValue("@References", resume.References);
+                insertcom.Parameters.AddWithValue("@Ref", resume.Ref);
 
                 try
                 {
@@ -134,7 +134,7 @@ namespace Final_Project
                 SQLiteCommand command1 = new SQLiteCommand(drop, con);
                 command1.ExecuteNonQuery();
 
-                string table = "create table RESUMES (ID integer primary key, FirstName text, LastName text, Gender text, Age integer, ContactInfo text, Experience text, Education text, Hobbies text, 'References' text);";
+                string table = "create table RESUMES (ID integer primary key, FirstName text, LastName text, Gender text, Age integer, ContactInfo text, Experience text, Education text, Hobbies text, Ref text);";
 
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
                 command2.ExecuteNonQuery();
@@ -184,7 +184,7 @@ namespace Final_Project
                         resume.Hobbies = reader["Hobbies"].ToString();
 
                         
-                        resume.References = reader["References"].ToString();
+                        resume.Ref = reader["Ref"].ToString();
                     }
                 }
                 return resume;
@@ -200,7 +200,7 @@ namespace Final_Project
             {
                 con.Open();
 
-                string query = "UPDATE Resumes SET FirstName = @FirstName, LastName = @LastName, Gender = @Gender, Age = @Age, ContactInfo = @ContactInfo, Experience = @Experience, Education = @Education, Hobbies = @Hobbies, References = @References WHERE Id = @Id";
+                string query = "UPDATE Resumes SET FirstName = @FirstName, LastName = @LastName, Gender = @Gender, Age = @Age, ContactInfo = @ContactInfo, Experience = @Experience, Education = @Education, Hobbies = @Hobbies, Ref = @Ref WHERE Id = @Id";
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
                 updatecom.Parameters.AddWithValue("@Id", resume.Id);
@@ -212,7 +212,7 @@ namespace Final_Project
                 updatecom.Parameters.AddWithValue("@Experience", resume.Experience);
                 updatecom.Parameters.AddWithValue("@Education", resume.Education);
                 updatecom.Parameters.AddWithValue("@Hobbies", resume.Hobbies);
-                updatecom.Parameters.AddWithValue("@References", resume.References);
+                updatecom.Parameters.AddWithValue("@Ref", resume.Ref);
 
                 try
                 {
@@ -292,7 +292,7 @@ namespace Final_Project
                         resume.Hobbies = reader["Hobbies"].ToString();
 
 
-                        resume.References = reader["References"].ToString();
+                        resume.Ref = reader["Ref"].ToString();
 
                         listResumes.Add(resume);
 

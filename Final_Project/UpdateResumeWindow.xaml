@@ -8,7 +8,7 @@
         Title="UpdateResumeWindow" Height="450" Width="800">
     <Grid>
 		<StackPanel Margin="10">
-			<Label Content="Update Resume"/>
+			<Label Content="Update Resume" Width="214"/>
 			<StackPanel Orientation="Horizontal">
 				<Label Content="FirstName: "/>
 				<TextBox x:Name="firstNameTextBox"/>

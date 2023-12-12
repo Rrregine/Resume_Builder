@@ -34,7 +34,7 @@ namespace Final_Project
             resume.Experience = experienceTextBox.Text;
             resume.Education = educationTextBox.Text;
             resume.Hobbies = hobbiesTextBox.Text;
-            resume.References = referencesTextBox.Text;
+            resume.Ref = referencesTextBox.Text;
         }
         
              private void SaveButtonClick(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace Final_Project
             resume.Experience = experienceTextBox.Text;
             resume.Education = educationTextBox.Text;
             resume.Hobbies = hobbiesTextBox.Text;
-            resume.References = referencesTextBox.Text;
+            resume.Ref = referencesTextBox.Text;
 
             ResumeDBHandler db = ResumeDBHandler.Instance;
             db.UpdateResume(resume);
