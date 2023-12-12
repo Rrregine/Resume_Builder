@@ -25,5 +25,17 @@ namespace Final_Project
             InitializeComponent();
             this.resume = resume;
         }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateResumeWindow updateResumeWindow = new UpdateResumeWindow(resume);
+            updateResumeWindow.ShowDialog();
+            Close();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

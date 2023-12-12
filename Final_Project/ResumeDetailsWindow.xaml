@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Final_Project"
         mc:Ignorable="d"
-        Title="ResumeDetailsWindow" Height="450" Width="800">
+        Title="ResumeDetailsWindow" Height="470" Width="800">
     <Grid>
-        
+        <StackPanel Margin="10">
+            <Label Content="Resume Details" Width="206"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="FirstName: "/>
+                <TextBlock x:Name="firstNameTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="LastName: "/>
+                <TextBlock x:Name="lastNameTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Gender: "/>
+                <TextBlock x:Name="genderTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Age: "/>
+                <TextBlock x:Name="ageTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Contact Info: "/>
+                <TextBlock x:Name="contactTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Education: "/>
+                <TextBlock x:Name="educationTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Experience: "/>
+                <TextBlock x:Name="experienceTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Hobbies: "/>
+                <TextBlock x:Name="hobbiesTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="References: "/>
+                <TextBlock x:Name="referencesTextBlock"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button x:Name="UpdateButton" 
+                    Click="UpdateButton_Click">
+                    Update
+                </Button>
+                <Button x:Name="DeleteButton"
+                        Click="DeleteButton_Click">
+                    Delete
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

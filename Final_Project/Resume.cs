@@ -22,7 +22,7 @@ namespace Final_Project
         public override string ToString()
         {
             string formatted = String.Format("{0}\t {1}\t {2} \t, {3}\t, {4} year-old\nContact Information: {5}\nWork Experience: {6}\nEducation: {7}\nHobbies: {8}\nReferences: {9}",
-                                              Id, FirstName, LastName, Gender, Age, string.Join(", ", ContactInfo), string.Join(", ", Experience), string.Join(", ", Education), string.Join(", ", Hobbies), string.Join(", ", References));
+                                              Id, FirstName, LastName, Gender, Age, ContactInfo, Experience, Education, Hobbies,References);
             return formatted;
         }
     }

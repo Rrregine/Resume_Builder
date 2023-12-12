@@ -47,7 +47,7 @@ namespace Final_Project
 
         private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ExportToPDF.exportToPDF(resumes);
         }
 
         private void AllResumesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
