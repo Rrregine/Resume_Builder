@@ -39,8 +39,9 @@ namespace Final_Project
 
         private void AddResumeButton_Click(object sender, RoutedEventArgs e)
         {
-            //i add all of the components in the add window that we need for resumes, so it would be name, phone, emain, experience, education and so on.
-            //hopefully all this will work!
+            AddResumeWindow addResumeWindow = new AddResumeWindow();
+            addResumeWindow.ShowDialog();
+            RefreshAllResumesList();
 
         }
 
