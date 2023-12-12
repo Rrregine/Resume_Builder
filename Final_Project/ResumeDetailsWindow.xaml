@@ -53,7 +53,7 @@
 				<Label Content="Last Modified On:: "/>
 				<TextBlock x:Name="lastModifiedTextBlock"/>
 			</StackPanel>
-			<Button x:Name="Modify Date" Click="ModifyData_Click">
+			<Button x:Name="Modify_Dat" Click="ModifyData_Click">
 				Modify Date
 			</Button>
             <StackPanel Orientation="Horizontal"
