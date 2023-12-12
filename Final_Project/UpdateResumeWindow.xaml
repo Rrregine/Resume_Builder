@@ -7,6 +7,43 @@
         mc:Ignorable="d"
         Title="UpdateResumeWindow" Height="450" Width="800">
     <Grid>
-        
+		<StackPanel Margin="10">
+			<Label Content="Update Resume"/>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="FirstName: "/>
+				<TextBox x:Name="firstNameTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="LastName: "/>
+				<TextBox x:Name="lastNameTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Gender: "/>
+				<TextBox x:Name="genderTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Age: "/>
+				<TextBox x:Name="ageTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Contact Info: "/>
+				<TextBox x:Name="contactTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Experience: "/>
+				<TextBox x:Name="experienceTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Hobbies: "/>
+				<TextBox x:Name="hobbiesTextBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Label Content="References: "/>
+				<TextBox x:Name="referencesTextBox"/>
+			</StackPanel>
+			<Button x:Name="SubemitButton" Click="SubmitButtonClick">
+				Submit
+			</Button>
+		</StackPanel>
     </Grid>
 </Window>
