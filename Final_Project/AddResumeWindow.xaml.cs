@@ -54,16 +54,60 @@ namespace Final_Project
             newResume.FirstName = firstNameTextBox.Text;
             newResume.LastName = lastNameTextBox.Text;
             newResume.Gender = genderTextBox.Text;
-            newResume.Age = Convert.ToInt32(ageTextBox.Text);
+
             newResume.ContactInfo = contactTextBox.Text;
             newResume.Experience = experienceTextBox.Text;
             newResume.Education = educationTextBox.Text;
             newResume.Hobbies = hobbiesTextBox.Text;
             newResume.Ref = referencesTextBox.Text;
 
-            if (firstNameTextBox.Text == null)
-            {
 
+            if (firstNameTextBox.Text == "")
+            {
+                string messageBoxText = "First name cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+
+            if (lastNameTextBox.Text == "")
+            {
+                string messageBoxText = "Last name cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+
+            if (ageTextBox.Text == "")
+            {
+                string messageBoxText = "Age cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                newResume.Age = Convert.ToInt32(ageTextBox.Text);
+            }
+
+            if (contactTextBox.Text == "")
+            {
+                string messageBoxText = "Contact Information cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
             }
 
 

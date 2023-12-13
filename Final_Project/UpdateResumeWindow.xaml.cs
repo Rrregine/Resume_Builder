@@ -39,7 +39,6 @@ namespace Final_Project
             hobbiesTextBox.Text = resume.Hobbies;
             referencesTextBox.Text = resume.Ref;
         }
-
         private void InitializeDates()
         {
             createdOn = DateTime.Now;
@@ -62,15 +61,74 @@ namespace Final_Project
 
         private void SaveButtonClick(object sender, RoutedEventArgs e)
         {
-            resume.FirstName = firstNameTextBox.Text;
-            resume.LastName = lastNameTextBox.Text;
+            
+            
             resume.Gender = genderTextBox.Text;
-            resume.Age = Convert.ToInt32(ageTextBox.Text);
-            resume.ContactInfo = contactTextBox.Text;
+            
             resume.Experience = experienceTextBox.Text;
             resume.Education = educationTextBox.Text;
             resume.Hobbies = hobbiesTextBox.Text;
             resume.Ref = referencesTextBox.Text;
+
+            if (firstNameTextBox.Text == "")
+            {
+                string messageBoxText = "First name cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                resume.FirstName = firstNameTextBox.Text;
+            }
+
+            if (lastNameTextBox.Text == "")
+            {
+                string messageBoxText = "Last name cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                resume.LastName = lastNameTextBox.Text;
+            }
+
+            if (ageTextBox.Text == "")
+            {
+                string messageBoxText = "Age cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                resume.Age = Convert.ToInt32(ageTextBox.Text);
+            }
+
+            if (contactTextBox.Text == "")
+            {
+                string messageBoxText = "Contact Information cannot be empty!";
+                string caption = "Warning";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                resume.ContactInfo = contactTextBox.Text;
+            }
 
             ResumeDBHandler db = ResumeDBHandler.Instance;
             db.UpdateResume(resume);
