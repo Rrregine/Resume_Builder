@@ -9,41 +9,52 @@
     <Grid>
 		<StackPanel Margin="10">
 			<Label Content="Add Resume"/>
+            <TextBlock>Personal Information:</TextBlock>
 			<StackPanel Orientation="Horizontal">
-				<Label Content="FirstName: "/>
-				<TextBox x:Name="firstNameTextBox"/>
+				<Label Content="FirstName*: "/>
+				<TextBox x:Name="firstNameTextBox"
+                         Width="300"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
-				<Label Content="LastName: "/>
-				<TextBox x:Name="lastNameTextBox"/>
+				<Label Content="LastName*: "/>
+				<TextBox x:Name="lastNameTextBox"
+                         Width="300"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<Label Content="Gender: "/>
-				<TextBox x:Name="genderTextBox"/>
+				<TextBox x:Name="genderTextBox"
+                         Width="300"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
-				<Label Content="Age: "/>
-				<TextBox x:Name="ageTextBox"/>
+				<Label Content="Age*: "/>
+				<TextBox x:Name="ageTextBox"
+                         Width="300"/>
 			</StackPanel>
-			<StackPanel Orientation="Horizontal">
-				<Label Content="Contact Info: "/>
-				<TextBox x:Name="contactTextBox"/>
-			</StackPanel>
-			<StackPanel Orientation="Horizontal">
+            <TextBlock>For the following information, Use comma to separate each element if you want to enter multiple:</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Contact Info*: "/>
+                <TextBox x:Name="contactTextBox"
+                         Width="300"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
 				<Label Content="Experience: "/>
-				<TextBox x:Name="experienceTextBox"/>
+				<TextBox x:Name="experienceTextBox"
+                         Width="300"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<Label Content="Education: "/>
-				<TextBox x:Name="educationTextBox"/>
+				<TextBox x:Name="educationTextBox"
+                         Width="400"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<Label Content="Hobbies: "/>
-				<TextBox x:Name="hobbiesTextBox"/>
+				<TextBox x:Name="hobbiesTextBox"
+                         Width="400"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<Label Content="References: "/>
-				<TextBox x:Name="referencesTextBox"/>
+				<TextBox x:Name="referencesTextBox"
+                         Width="400"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<Label Content="Created on: "/>
@@ -53,8 +64,9 @@
 				<Label Content="Last Modified: "/>
 				<TextBlock x:Name="lastModifiedTextBlock"/>
 			</StackPanel>
+            <TextBlock>All the fields with * are mandatory!</TextBlock>
 			<Button x:Name="Modify_Date" Click="ModifyData_Click">
-				Modify Date
+				Update Time
 			</Button>
 				<Button x:Name="SubmitButton" Click="SubmitButtonClick">
 						Submit

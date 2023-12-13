@@ -54,7 +54,7 @@
 				<TextBlock x:Name="lastModifiedTextBlock"/>
 			</StackPanel>
 			<Button x:Name="Modify_Dat" Click="ModifyData_Click">
-				Modify Date
+				Update Time
 			</Button>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">

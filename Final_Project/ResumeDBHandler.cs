@@ -25,58 +25,44 @@ namespace Final_Project
             {
                 FirstName = "Regine",
                 LastName = "Wang",
-                Gender = "Male",
-                Age = 40,
-                ContactInfo = "hansolo@gmail.com",
-                Experience = "a",
-                Education = "a",
-                Hobbies = "a",
-                Ref = "a"
+                Gender = "Female",
+                Age = 18,
+                ContactInfo = "2232176@champlaincollege.qc.ca",
+                Experience = "none",
+                Education = "College Level",
+                Hobbies = "Writing",
+                Ref = "none"
             };
 
             Resume newR2 = new Resume
             {
-                FirstName = "Eltaw",
-                LastName = "Forst",
-                Gender = "Male",
+                FirstName = "Mariya",
+                LastName = "Zolovska",
+                Gender = "Female",
                 Age = 18,
-                ContactInfo = "111-1111-1111",
-                Experience = "a",
-                Education = "a",
-                Hobbies = "a",
-                Ref = "a"
+                ContactInfo = "2230965@champlaincollege.qc.ca",
+                Experience = "some",
+                Education = "College Level",
+                Hobbies = "some",
+                Ref = "none"
             };
 
             Resume newR3 = new Resume
             {
-                FirstName = "Ellan",
-                LastName = "Forst",
-                Gender = "Male",
-                Age = 24,
-                ContactInfo = "ellanforst@gmail.com",
-                Experience = "a",
-                Education = "a",
-                Hobbies = "a",
-                Ref = "a"
-            };
-
-            Resume newR4 = new Resume
-            {
-                FirstName = "Nordt",
-                LastName = "Silversmith",
-                Gender = "Male",
-                Age = 25,
-                ContactInfo = "333-3333-3333",
-                Experience = "a",
-                Education = "a",
-                Hobbies = "a",
-                Ref = "a"
+                FirstName = "Anna",
+                LastName = "Pogonetz",
+                Gender = "Female",
+                Age = 18,
+                ContactInfo = "2231334@champlaincollege.qc.ca",
+                Experience = "none",
+                Education = "College Level",
+                Hobbies = "Drawing",
+                Ref = "none"
             };
 
             AddResume(newR1);
             AddResume(newR2);
             AddResume(newR3);
-            AddResume(newR4);
 
         }
 
