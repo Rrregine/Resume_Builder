@@ -61,6 +61,11 @@ namespace Final_Project
             newResume.Hobbies = hobbiesTextBox.Text;
             newResume.Ref = referencesTextBox.Text;
 
+            if (firstNameTextBox.Text == null)
+            {
+
+            }
+
 
 
             ResumeDBHandler db = ResumeDBHandler.Instance;
