@@ -29,5 +29,9 @@
             <Setter Property="Foreground" Value="AntiqueWhite"/>
             <Setter Property="Margin" Value="5"/>
         </Style>
+
+		<Style x:Key="TableStyle" TargetType="DataGrid">
+			<Setter Property="Background" Value="CornflowerBlue"/>
+		</Style>
     </Application.Resources>
 </Application>
