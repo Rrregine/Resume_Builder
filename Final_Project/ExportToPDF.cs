@@ -47,16 +47,16 @@ namespace Final_Project
             rect = new XRect(0, 10, page.Width - 20, 50);
             tf.Alignment = XParagraphAlignment.Center;
             string title = "RESUMES LIST";
-            tf.DrawString(title, fontTitle, XBrushes.Red, rect);
+            tf.DrawString(title, fontTitle, XBrushes.SaddleBrown, rect);
 
             //Add texts
             string text = "";
             foreach (Resume resume in resumes)
             {
-                text += String.Format("{0}\t {1}\t {2} \t, {3}\t, {4} year-old\nContact Information: {5}\nWork Experience: {6}\nEducation: {7}\nHobbies: {8}\nReferences: {9}",
+                text += String.Format("{0}\t {1}\t {2} \t, {3}\t, {4} year-old\nContact Information: {5}\nWork Experience: {6}\nEducation: {7}\nHobbies: {8}\nReferences: {9}\n\n",
                 resume.Id, resume.FirstName, resume.LastName, resume.Gender, resume.Age, resume.ContactInfo, resume.Experience, resume.Education, resume.Hobbies, resume.Ref);
             }
-            rect = new XRect(10, 220, page.Width - 20, 220);
+            rect = new XRect(20, 260, page.Width - 20, 450);
             tf.Alignment = XParagraphAlignment.Left;
             tf.DrawString(text, fontBody, XBrushes.Black, rect,
             XStringFormats.TopLeft);
